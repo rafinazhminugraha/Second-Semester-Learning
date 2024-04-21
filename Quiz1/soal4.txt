@@ -1,0 +1,10 @@
+Linked List adalah struktur data linier yang terdiri dari rangkaian simpul atau node. Setiap simpul memiliki dua bagian: data dan referensi (link) ke simpul berikutnya dalam urutan1. Berikut adalah beberapa jenis Linked List:
+
+Singly Linked List: Setiap simpul memiliki link ke simpul berikutnya. Simpul terakhir memiliki link ke NULL, menandakan akhir dari list.
+Doubly Linked List: Setiap simpul memiliki dua link, satu ke simpul sebelumnya dan satu ke simpul berikutnya.
+Circular Linked List: Simpul terakhir dalam list memiliki link ke simpul pertama, membentuk lingkaran.
+Berikut adalah contoh representasi visual dari sebuah Linked List:
+
+HEAD -> |data|next| -> |data|next| -> |data|next| -> NULL
+
+Dalam contoh di atas, HEAD adalah referensi ke simpul pertama dalam list. Setiap |data|next| mewakili sebuah simpul, di mana data adalah informasi yang disimpan dalam simpul dan next adalah referensi ke simpul berikutnya dalam list. NULL menandakan akhir dari list.
