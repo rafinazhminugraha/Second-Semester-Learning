@@ -447,8 +447,7 @@ int main()
         cout << "[2] Masuk\n";
         cout << "[3] Keluar\n";
 
-        char inputPilihan;
-        cout << "\n> "; 
+        char inputPilihan; cout << "\n> "; 
         cin >> inputPilihan;
 
         switch (inputPilihan)
