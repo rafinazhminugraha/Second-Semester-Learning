@@ -202,6 +202,36 @@ void tampilkanRiwayatTransaksi(Nasabah* nasabah) {
     cin >> opsi;
 }
 
+void menuSetortunai(Nasabah* head, Nasabah* nasabah) {
+    printJudul();
+    cout << "Menu Setor Tunai\n\n";
+
+    int jumlahSetorTunai;
+    cout << "Masukkan Jumlah Setor Tunai: Rp. ";
+    cin >> jumlahSetorTunai;
+
+    if (jumlahSetorTunai <= 0) {
+        cout << "Jumlah setor tunai tidak valid.\n";
+        this_thread::sleep_for(chrono::seconds(1));
+        return;
+    }
+
+    if (nasabah->saldo < jumlahSetorTunai) {
+        cout << "Saldo Anda tidak mencukupi untuk melakukan setor tunai ini\n";
+        this_thread::sleep_for(chrono::seconds(1));
+        return;
+    }
+
+    nasabah->saldo += jumlahSetorTunai;
+
+    string keterangan = "Setor Tunai";
+    rekamTransaksi(nasabah, keterangan, jumlahSetorTunai);
+
+    cout << "Setor Tunai berhasil dilakukan.\n";
+    this_thread::sleep_for(chrono::seconds(1));
+    return;
+}
+
 void menuUtama(Nasabah* head, Nasabah* nasabah) {
     while (true) {
         printJudul();
@@ -230,8 +260,8 @@ void menuUtama(Nasabah* head, Nasabah* nasabah) {
                 menuTransfer(head, nasabah);
                 break;
             case 5:
-                cout << "Ini adalah menu SETOR TUNAI\n";
-                exit(0);
+                menuSetortunai(head, nasabah);
+                break;
             case 6:
                 return;
             default:

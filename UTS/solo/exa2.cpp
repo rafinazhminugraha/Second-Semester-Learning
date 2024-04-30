@@ -1,36 +1,36 @@
 #include <iostream>
-using namespace std;
+#include <conio.h> // Menggunakan conio.h untuk getch() pada Windows
 
-int main()
-{
-    int choice = 2;
-    do
-    {
-        cout << "[1] masuk\n";
-        cout << "[2] masuk\n";
-        cout << "[3] masuk\n";
+std::string getPassword() {
+    std::string password;
+    char ch;
 
-        cout << "> "; cin >> choice;
-
-        if (choice < 1 && choice >3)
+    std::cout << "Masukkan password: ";
+    while (true) {
+        ch = _getch(); // Menggunakan _getch() untuk membaca karakter tanpa menampilkannya
+        if (ch == 13) // 13 adalah kode ASCII untuk Enter
+            break;
+        else if (ch == 8) // 8 adalah kode ASCII untuk Backspace
         {
-            cout << "invalid input";
+            if (!password.empty())
+            {
+                std::cout << "\b \b"; // Menghapus karakter dari layar
+                password.pop_back(); // Menghapus karakter dari string password
+            }
         }
-    }while(choice < 1 || choice >3);
-    
-    if (choice == 1)
-    {
-        cout << "ini adalah pilihan 1";
+        else
+        {
+            password.push_back(ch); // Menambah karakter ke string password
+            std::cout << '*'; // Menampilkan bintang sebagai ganti karakter
+        }
     }
-    else if (choice == 2)
-    {
-        cout << "ini adalah pilihan 2";
-    }
-    else if (choice == 3)
-    {
-        cout << "Ini adalah pilihan 3";
-    }
-    
-    
+    std::cout << std::endl;
+    return password;
+}
+
+int main() {
+    std::string password = getPassword();
+    std::cout << "Password yang dimasukkan: " << password << std::endl;
+
     return 0;
 }
