@@ -84,8 +84,6 @@ void pindahkanBola(Stack& StackAsal, Stack& StackTujuan)
     }
 }
 
-
-
 int main() 
 {
     membuatStack(Tabung1);
