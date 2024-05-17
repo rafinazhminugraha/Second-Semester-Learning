@@ -49,13 +49,16 @@ void tambahkanBola(STACK& tabung, string data)
 
 void pindahkanBola(STACK& tabungAsal, STACK& tabungTujuan)
 {
-    if (tabungKosong(tabungAsal)) {
+    if (tabungKosong(tabungAsal)) 
+    {
         cout << "tidak bisa memindahkan, tabung asal kosong";
     }
-    else if (tabungPenuh(tabungTujuan)) {
+    else if (tabungPenuh(tabungTujuan)) 
+    {
         cout << "tidak bisa memindahkan, tabung tujuan penuh";
     }
-    else {
+    else 
+    {
         tabungAsal.top--;
         tabungTujuan.data[tabungTujuan.top++] = tabungAsal.data[tabungAsal.top];
     }
