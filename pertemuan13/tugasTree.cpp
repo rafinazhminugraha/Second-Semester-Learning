@@ -17,6 +17,7 @@ void deklarasi()
 void printJudul()
 {
     cout << "\033[2J\033[1;1H";
+    system("cls");
     cout << "==============================\n";
     cout << "   TUGAS SDA PERT 13 - TREE\n";
     cout << "rafi nazhmi nugraha - 2301303\n";
